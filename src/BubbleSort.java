@@ -18,8 +18,33 @@ public class BubbleSort {
         arr = randomArray(size);
 
         printArray(arr);
-        bubbleSort(arr);
+        bubbleSortAgain(arr,size);
         printArray(arr);
+    }
+
+    private static void bubbleSortAgain(int[] arr, int size) {
+
+        int i = size - 1, temp;
+        boolean sorted = true, swopped;
+        while(i > 1 && sorted == true){
+            swopped = false;
+            for(int j = 0; j <= i-1;j++){
+
+                if(arr[j]>arr[j+1]){
+                    temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                    swopped = true;
+                }
+
+            }
+            if(swopped == false){
+                sorted = false;
+            }else{
+                i = i-1;
+            }
+        }
+
     }
 
     private static void bubbleSort(int[] arr) {
